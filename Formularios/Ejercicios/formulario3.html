@@ -1,0 +1,116 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <h2>Formularios: </h2>
+    <ol>
+        <li>
+            <a href="formulario1.html">
+                formulario2
+            </a>
+        </li>
+        <li>
+            <a href="formulario3.html">
+                formulario3
+            </a>
+        </li>
+    </ol>
+    <br>
+    <form>
+        <table class="tableMain">
+            <tr class="tOrange">
+                <td bgcolor="orange">Propiedad</td>
+                <td class="tOrange">Formulario</td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="nombre">Nombre</label>
+                </td>
+                <td>
+                    <input type="text" id="nombre" name="nombre">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="apellidos">Apellidos</label>
+                </td>
+                <td>
+                    <input type="text" id="apellidos" name="apellidos">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="nif">NIF</label>
+                </td>
+                <td>
+                    <input type="text" id="nif" name="NIF">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Sexo
+                </td>
+                <td>
+                    <input type="radio" value="H" name="sexo" id="H">
+                    <label for="H">Hombre</label>
+                    <input type="radio" value="M" name="sexo" id="M">
+                    <label for="M">Mujer</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Aficiones</td>
+                <td>
+                    <table class="valid">
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="aficiones" id="leer">
+                                <label for="leer">Leer</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="aficiones" id="Videojuegos">
+                                <label for="Videojuegos">Videojuegos</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="aficiones" id="YTB">
+                                <label for="YTB">Ver youtube</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="aficiones" id="Salir">
+                                <label for="Salir">Salir con amigos</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="aficiones" id="cine">
+                                <label for="cine">Ir al cine</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="aficiones" id="sport">
+                                <label for="sport" class="jaja">Hacer deporte</label>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr class="tOrange">
+                <td colspan="2" class="buttoms">
+                    <input class="buttom" type="submit" value="Comprobar formulario">
+                    <input type="reset" value="Reiniciar formulario">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="semaforo">Semáforo</label>
+                    <input type="text" id="semaforo">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

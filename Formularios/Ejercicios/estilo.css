@@ -1,12 +1,25 @@
 .tOrange{
     background-color: orange;
 }
-table{
-    
+.tableMain {
+    border-collapse: collapse;
     border: 6px solid black;
 }
-th,td{
+tr td{
+    border: 3px solid black;
+}
+
+.valid tr td{
+    border: none;
+}
+
+.notd{
     vertical-align: top;
-    border: 3px solid #000;
+    border: 0px solid #000;
     border-spacing: 0;
 }
+.buttoms{
+    text-align: center;
+    padding: 5px;
+}
+
