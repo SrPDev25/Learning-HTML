@@ -22,6 +22,8 @@
 }
 p {
     font-family: 'Oswald', sans-serif;
+    text-align: justify;
+    
 }
 .divRight{
     display: block;
