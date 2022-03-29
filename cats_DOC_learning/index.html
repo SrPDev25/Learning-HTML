@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <title>Holis</title>
+</head>
+
+<body>
+    <style>
+        body{
+            background-color: pink;
+        }
+
+        div{
+            background-color: whitesmoke;
+        }
+
+        .Ej1 {
+            width: 300px;
+            height: 151px;
+            border: 2px solid black;
+            text-align: center;
+            margin: auto;
+        }
+
+        .Ej2 {
+            width: 80%;
+            height: 80%;
+            border: 2px solid black;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+            margin-bottom: 10%;
+        }
+
+        .cats{
+            max-width: 80%;
+            max-height: 80%;
+        }
+    </style>
+    <script>
+        function validarQueso() {// El nombre del metodo no importa (para el funcionamiento)
+            x = document.forms["from"]["queso"].value;// en javascript no hace falta indicar tipo de dato 
+            if (x == "queso") {
+                document.getElementById("queso").value = "confirmado";// se puede usar el getElementById tanto para coger como añadir valores
+                document.getElementById("queso").style.backgroundColor = "green";//.style coge estilos de css
+            } else {
+                document.getElementById("queso").value = "false";
+                document.getElementById("queso").style.backgroundColor = "red";
+            }
+            return false; //Evita que reinicie la página
+            //Al retornar false no ejecuta su funcion como submit como con reset
+        }
+
+        function nextCat(){
+            var ubicacion= document.getElementById("cats").src;
+            ubicacion=ubicacion.substr(-13);//Coge los 13 ultimos caracteres de un string
+            var numero= ubicacion.match(/\d+/);//Coge el primer numero (todos los digitos antes de otro simbolo) de un string 
+            if(Number(numero)>18){
+                document.getElementById("cats").src="img/cat"+1+".jpg";
+            }else{
+                numero++;
+                document.getElementById("cats").src="img/cat"+numero+".jpg";
+            }
+            //document.getElementById("cats").src="img/cat3.jpg";
+        }
+
+        function comprobacion(){
+            var el = document.getElementById("cats");
+            el.addEventListener("click", nextCat, false);
+        }
+
+
+        document.addEventListener("DOMContentLoaded",comprobacion,false);//Para evitar problemas
+        /*
+        --Metodos dentro del action listener 
+            (Tipo de evento a escuchar)DOMContentLoaded, hace que se ejecute el action listener cuando el código HTML esté totalmente cargado
+            (Evento a ejecutarse cuando se escucha el ejecutable)comprobacion, funcion a ejecutar
+            (Ni idea)false, no se 
+        */
+    </script>
+
+    <div class="Ej1">
+        <h3 style="text-align: center;">Ejercicio 1</h3>
+        <!--action_page.php, llama a la pagina donde se ejecuta la accion-->
+        <form name="from" onreset="return validarQueso()">
+            <!--Ejecuta el metodo validarQueso-->
+            <input type="text" id="queso" class="prueba">
+            <input type="reset" value="¿Comprobar?">
+        </form>
+        <p style="size: 3px; color: red;">Escribe queso</p>
+    </div>
+
+    <div class="Ej2">
+        <h3 style="text-align: center;">Ejercicio 2</h3>
+        <img src="img/cat1.jpg" class="cats" id="cats" >
+    </div>
+</body>
+
+</html>
