@@ -1,0 +1,128 @@
+
+
+//document.getElementBy(Id/Class/Type...).metodos
+
+/**
+ * A la elemento con la id indicada cambia su estilo para mostrar el error
+ * @param {*} id Id del elemento amodificar(como es un semaforo esta indicado con una s + la id de la comprobación)
+ * @param {*} txtError el texto de error que se le va a añadir
+ */
+function compError(id,txtError){
+    document.getElementById(id).style.color="yellow";//Cambia de color a al elemento con id indicada por amarillo
+    document.getElementById(id).style.backgroundColor="red";//Cambia el color del fondo por rojo a la etiqueta id
+    document.getElementById(id).innerHTML= txtError; //Cambia el texto del elemento por txtError
+}
+
+/**
+ * Al elemento indicado se le modifica por un mensaje de OK
+ * @param {*} id elemento a modificar (como es un semaforo esta indicado con una s + la id de la comprobación)
+ */
+function success(id){
+    document.getElementById(id).innerHTML="OK";
+    document.getElementById(id).style.color="blue";
+    document.getElementById(id).style.backgroundColor="green";
+}
+
+/**
+ * Se indica un elemento texto y se le comprueba si se han introducido datos
+ * @param {*} id elemento a comprobar por id
+ */
+function comprobacionTxt(id){
+    var txtOrigen=document.getElementById(id).value;//Se saca el texto del elemento
+    if (txtOrigen==""){//Se comprueba si se introdujeron datos
+        compError("s"+id,"No puede estar vacio");
+    }else if(txtOrigen.replace(/ /g,"")==""){//Se comprueba si solo hay espacios, no tengo ni idea de como funciona este comando
+        compError("s"+id, "Escriba caracteres válidos");//llama al metodo compError(id,txtError)
+    }else{
+        success("s"+id);//llama al metodo success(id)
+    }
+}
+
+/**
+ * Comprueba si el NIF es válido
+ */
+function comprobacionNIF(){
+    var txtOrigen=document.getElementById("nif").value;
+    //Como usamos un metodo de String y javascript usa var hay que indicar antes que es un String
+    if(String(txtOrigen).length!=9){//Mira si la longiturd del texto es 9
+        compError("sNIF","El NIF debe tener 9 carácteres");
+    //(Esta comprobación no es obligatoria)
+    }else if(txtOrigen.slice(0,8)!=Number(txtOrigen.slice(0,8)) || !esLetra(txtOrigen.slice(8,9)) ){
+        //Primero comprueba que los 8 primeros caracteres son numeros y luego si el último es una letra
+        compError("sNIF","La estructura del NIF no es válido (8 numeros + Letra de comprobación)");
+    }else if(!verificacionLetra(txtOrigen)){//(Esta parte no la piden)
+        //Use el método que hicimos para comprobar si la letra esta bien
+        compError("sNIF","DNI no válido");
+    }else{
+        //El DNI es válido
+        success("sNIF");
+    }
+}
+
+/**
+ * Comprueba si el sexo ha sido introducido
+ */
+function comprobacionSexo(){
+    //Si el elemento sexoHombre ha sido checked u el elemento sexoMujer lo ha sido es válido
+    if(document.getElementById("sexoHombre").checked || document.getElementById("sexoMujer").checked){
+        success("sSexo")
+    }else{
+        compError("sSexo","Debe seleccionar el sexo");
+    }
+
+}
+
+/**
+ * Comprueba los si al menos 2 checkBox han sido seleccionados
+ */
+function comprobacionAficiones() {
+    //Selecciona todos los checkBox de la pagina checkeados y mira si el array es menor que 2
+    if(document.querySelectorAll('input[type="checkbox"]:checked').length<2){
+        compError("sAficiones","Debe seleccionar por lo menos 2");
+    }else{
+        success("sAficiones");
+    }
+    
+
+}
+
+/**
+ * Ejecuta todas comprobaciones
+ * @returns 
+ */
+function comprobacion() {
+    comprobacionTxt("nombre");
+    comprobacionTxt("apellido");
+    comprobacionNIF();
+    comprobacionSexo();
+    comprobacionAficiones()
+    return false;
+}
+
+
+/**
+ * Comprueba si un caracter es una letra, no es obligatorio 
+ * @param {} caracter 
+ * @returns 
+ */
+const esLetra = (caracter) => {
+    //let(nuemero operable) toUpperCase(transforma letras en mayusculas) charCodeAt(transforma un caracter en su codigo en ascii)
+	let ascii = caracter.toUpperCase().charCodeAt();
+	return ascii > 64 && ascii < 91;//Devuelve un boolean
+}
+
+/**
+ * Comprueba si la letra está bien, no es obligatorio
+ * @param dni 
+ * @returns 
+ */
+function verificacionLetra(dni) {
+    let pos;
+    var letras = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
+    pos=Number(dni.slice(0,8))%23;
+    if(dni.slice(8,9)==letras[pos]){
+        return true;
+    }else{
+        return false;
+    }
+}

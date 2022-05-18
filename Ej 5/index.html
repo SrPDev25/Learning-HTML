@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>Ejercicio 5</title>
+</head>
+
+<body>
+    <script>
+
+        var num;
+        var pos;
+        var letras = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
+        while (num = prompt("Introduce numeros del DNI")) {
+            if (num <= 9999999 || num >= 100000000) {
+                alert("Número no válido");
+            } else {
+                pos = num % 23;
+            }
+            alert("DNI", num + letras[pos]);
+        }
+
+        
+
+
+    </script>
+</body>
+
+</html>

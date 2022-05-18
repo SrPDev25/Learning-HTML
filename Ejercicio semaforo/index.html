@@ -1,0 +1,114 @@
+<html>
+
+<head>
+    <title>La tabla</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <script src="scripts.js"></script>
+    <form onsubmit="return comprobacion()">
+        <table class="table1">
+            <tr>
+                <td class="title1">Propiedad</td>
+                <td class="title1">Formulario</td>
+                <td class="title1">Semáforo</td>
+            </tr>
+            <tr class="text1"><!--Nombre-->
+                <td><label for="nombre">Nombre: </label> </td>
+                <td><input type="text" id="nombre" name="name"></td>
+                <td>
+                    <div class="semaforo">
+                        <p id="snombre" style="margin: 2px;"></p><!--Semaforo 1-->
+                    </div>
+                </td>
+            </tr>
+            <tr class="text1"><!--Apellido-->
+                <td><label for="apellido">Apellido: </label> </td>
+                <td><input type="text" id="apellido" name="lastname"></td>
+                <td>
+                    <div class="semaforo">
+                        <p id="sapellido" style="margin: 2px;"></p><!--Semaforo 1-->
+                    </div>
+                </td>
+            </tr>
+            <tr class="text1"><!--NIF-->
+                <td><label for="nif">N.I.F.: </label> </td>
+                <td><input type="text" id="nif" name="nif"></td>
+                <td>
+                    <div class="semaforo">
+                        <p id="sNIF" style="margin: 2px;"></p><!--Semaforo 1-->
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Sexo: </td>
+                <td>
+                    <input type="radio" id="sexoHombre"  name="gender">
+                    <label for="sexo" value="H">Hombre</label>
+                    <input type="radio" id="sexoMujer" name="gender">
+                    <label for="sexo" value="M">Mujer</label>
+                    
+                </td>
+                <td>
+                    <div class="semaforo">
+                        <p id="sSexo" style="margin: 2px;"></p><!--Semaforo-->
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Aficiones: </td>
+                <td>
+                    <table class="subtable1">
+                        <tr>
+                            <td>
+                                <input id="aficiones" value="Leer" type="checkbox" name="aficiones">
+                                <label for="aficiones">Leer</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" value="salir" name="aficiones" id="Salir">
+                                <label for="Salir">Salir con amigos</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" value="Videojuegos" name="aficiones" id="Videojuegos">
+                                <label for="Videojuegos">Videojuegos</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" value="cine" name="aficiones" id="cine">
+                                <label for="cine">Ir al cine</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" value="youtube" name="aficiones" id="YTB">
+                                <label for="YTB">Ver youtube</label>
+                                
+                            </td>
+                            <td>
+                                <input type="checkbox" value="deporte" name="aficiones" id="sport">
+                                <label for="sport" class="jaja">Hacer deporte</label>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <div class="semaforo"> <!--Aficiones-->
+                        <p id="sAficiones" style="margin: 2px;"></p><!--Semaforo-->
+                    </div>
+                </td>
+            </tr>
+            <tr class="btnOrange1">
+                <td colspan="3">
+                    <input type="submit" value="Comprobar Formulario" class="buttom" >
+                    <input type="reset"  value="Reiniciar Formulario" class="buttom">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+
+</body>
+
+</html>
