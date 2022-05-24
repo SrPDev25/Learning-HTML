@@ -1,20 +1,22 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="txt/xsl" href="libros.xsl" ?>
+<?xml-stylesheet type="text/xsl" href="xslLibros_clase.xsl"?>
 <biblioteca>
-    <libro>
-     <titulo>La vida está en otra parte</titulo>	
-    	<fechaPublicacion año="1973"/>
-      <autor>Milan Kundera</autor>	
-	    <foto>vida.jpg</foto>
-    </libro>
-   <libro>
-     <titulo>Pantaleón y las visitadoras</titulo>	
-    	<fechaPublicacion año="1973"/>
-     <autor fechaNacimiento="28/03/1936">Mario Vargas Llosa</autor>    
-   </libro>
   <libro>
-      <titulo>Conversación en la catedral</titulo>	
-     <fechaPublicacion año="1969"/>	
-	    <autor fechaNacimiento="28/03/1936">Mario Vargas Llosa</autor>    
-    </libro>  
+    <titulo>La vida está en otra parte</titulo>	
+	<fechaPublicacion anyo="1973"/>
+    <autor>Milan Kundera</autor>	
+	<foto alto="50" ancho="90">vida.jpg</foto>
+  </libro>
+  <libro>
+    <titulo>Pantaleón y las visitadoras</titulo>	
+	<fechaPublicacion anyo="1973"/>
+    <autor fechaNacimiento="28/03/1936">Mario Vargas Llosa</autor>
+	<foto alto="40" ancho="85">pantaleon.jpg</foto>    
+  </libro>
+  <libro>
+    <titulo>Conversación en la catedral</titulo>	
+    <fechaPublicacion anyo="1969"/>	
+	<autor fechaNacimiento="28/03/1936">Mario Vargas Llosa</autor> 
+	<foto alto="60" ancho="100">catedral.png</foto>   
+  </libro>  
 </biblioteca>

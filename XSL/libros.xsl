@@ -32,7 +32,7 @@
                   <xsl:value-of select="foto" />
                 </xsl:attribute>
               </img>
-  </xsl:template>
+            </xsl:template>
           </td>
         </tr>
         </xsl:for-each>
