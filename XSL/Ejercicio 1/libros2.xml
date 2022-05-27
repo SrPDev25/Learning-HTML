@@ -4,19 +4,19 @@
   <libro>
     <titulo>La vida está en otra parte</titulo>	
 	<fechaPublicacion anyo="1973"/>
-    <autor >Milan Kundera</autor>	
+    <autor fechaNacimiento="28/03/1936" foto="kundera.png">Milan Kundera</autor>	
 	<foto alto="50" ancho="90">vida.jpg</foto>
   </libro>
   <libro>
     <titulo>Pantaleón y las visitadoras</titulo>	
 	<fechaPublicacion anyo="1973"/>
-    <autor fechaNacimiento="28/03/1936">Mario Vargas Llosa</autor>
+    <autor fechaNacimiento="28/03/1936" foto="kundera.png">Mario Vargas Llosa</autor>
 	<foto alto="40" ancho="85">pantaleon.jpg</foto>    
   </libro>
   <libro>
     <titulo>Conversación en la catedral</titulo>	
     <fechaPublicacion anyo="1969"/>	
-	<autor fechaNacimiento="28/03/1936">Mario Vargas Llosa</autor> 
+	<autor fechaNacimiento="28/03/1936" foto="mario.png">Mario Vargas Llosa</autor> 
 	<foto alto="60" ancho="100">catedral.png</foto>   
 	</libro>
 </biblioteca>

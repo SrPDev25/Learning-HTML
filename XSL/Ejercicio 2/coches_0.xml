@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="coches_0.xsl" ?>
+<coches>
+	<coche id="1">
+		<marca>Seat</marca>
+		<modelo>Toledo sport</modelo>    
+		<cilindrada>1995</cilindrada>
+		<potencia>115</potencia>
+		<precio>18900.9245</precio>
+		<mesentrega>3</mesentrega>
+		<mespromocion>7</mespromocion>
+	</coche>
+	<coche id="2">
+		<marca>Ford</marca>
+		<modelo>Focus TDI</modelo>
+		<cilindrada>1999</cilindrada>
+		<potencia>150</potencia>
+		<precio>21450.9</precio>
+		<mesentrega>5</mesentrega>
+		<mespromocion>9</mespromocion>	  
+	</coche>
+	<coche id="3">
+		<marca>Audi</marca>
+		<modelo>A3 especial edition</modelo>
+		<cilindrada>2000</cilindrada>
+		<potencia>180</potencia>
+		<precio>98560</precio>
+		<mesentrega>11</mesentrega>
+		<mespromocion>2</mespromocion>
+	</coche>
+	<coche id="4">
+		<marca>Ford</marca>
+		<modelo>Focus SXI</modelo>
+		<cilindrada>2500</cilindrada>
+		<potencia>160</potencia>
+		<precio>123175</precio>
+		<mesentrega>1</mesentrega>
+		<mespromocion>10</mespromocion>
+	</coche>
+	<coche id="5">
+		<marca>Audi</marca>
+		<modelo>A2</modelo>
+		<cilindrada>1600</cilindrada>
+		<potencia>90</potencia>
+		<precio>19657</precio>
+		<mesentrega>7</mesentrega>
+		<mespromocion>12</mespromocion>
+	</coche>
+</coches>
