@@ -11,10 +11,10 @@
               color:black;
               
           }
-          td:ntd-child(1){blackground: #FFFF00;}<!--Para que el primer td sea amarillo-->
-          td:ntd-child(3){blackground: #FF00FF;}<!--Para que el 3 td sea rosa creo-->
-          td:ntd-child(5){blackground: #00FFFF;}<!--Para que el 5 td sea asul creo-->
-          td:ntd-child(7){blackground: #FF0000;
+          td:nth-child(1){background-color: #FFFF00;}<!--Para que el primer td sea amarillo-->
+          td:nth-child(3){background-color: #FF00FF;}<!--Para que el 3 td sea rosa creo-->
+          td:nth-child(5){background-color: #00FFFF;}<!--Para que el 5 td sea asul creo-->
+          td:nth-child(7){background-color: #FF0000;
               width:100;
               height:150;
               text-align:center;
@@ -24,6 +24,7 @@
             border-collapse: collapse; <!--Deja uniforme los bordes -->
             padding:0.3 em;<!--Por ponerle -->
             cellspacing: 4; <!-- Deja un espacio con el texto-->
+            text-align: center;
           }
           
         </style>
@@ -44,7 +45,40 @@
           <tr>
             <td><xsl:value-of select="titulo"/></td>
             <td><xsl:value-of select="autor"/></td>
-            <td><xsl:value-of select="fechaPublicacion/@anyo"/></td>
+            <!--              if 1-->
+            <!--<td><xsl:value-of select="fechaPublicacion/@anyo"/>
+            <xsl:if test="fechaPublicacion/@anyo &gt; 1970">
+            <p>es posterior a 1970</p>
+            </xsl:if>   
+            <xsl:if test="fechaPublicacion/@anyo &lt; 1970">
+            <p>Anterior a 1970</p>
+            </xsl:if>                   
+            </td>
+            -->
+            <!--              if 2-->
+            <td>
+             <xsl:value-of select="fechaPublicacion/@anyo"/>
+             <xsl:choose>
+              <xsl:when test="fechaPublicacion/@anyo > 1970">
+                <br/>Posterior a 1970 
+              </xsl:when>
+                
+              <xsl:otherwise >
+                <br/>Anterior a 1970
+              </xsl:otherwise>
+            </xsl:choose>
+            </td>
+            <td><xsl:value-of select="autor/@fechaNacimiento"/></td>
+            <td><xsl:value-of select="foto"/></td>
+            <td><xsl:value-of select="concat(foto/@alto, 'px * ' ,foto/@ancho,'px') "/></td>
+            <td>
+              <img>
+                <xsl:attribute name="src"><xsl:value-of select="concat('img/',foto)"/></xsl:attribute>
+                <xsl:attribute name="alt"><xsl:value-of select="foto"/></xsl:attribute>
+                <xsl:attribute name="height"><xsl:value-of select="foto/@ancho"/></xsl:attribute>
+                <xsl:attribute name="width"><xsl:value-of select="foto/@alto"/></xsl:attribute>
+              </img>
+            </td>
           </tr>
           </xsl:for-each>
         </table>
